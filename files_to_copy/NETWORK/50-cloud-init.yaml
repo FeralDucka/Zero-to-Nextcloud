@@ -1,0 +1,89 @@
+network:
+    version: 2
+    renderer: networkd
+    ethernets:
+
+        eno1np0:
+            optional: true
+            addresses:
+            - [LAN_IP]
+            nameservers:
+                addresses:
+                - [DNS_1]
+                - [DNS_2]
+                search: []
+            routes:
+            -   to: default
+                via: [LAN_GATEWAY]
+            mtu: 9600
+            match:
+                macaddress: 84:16:0c:32:05:7e
+            set-name: eth1
+            accept-ra: false
+            link-local: []
+
+
+
+        eno2np1:
+            optional: true
+            dhcp4: false
+            dhcp6: false
+            mtu: 9600
+            match:
+                macaddress: 84:16:0c:32:05:7f
+            set-name: eth2
+            accept-ra: false
+            link-local: []
+
+
+
+        eno3:
+            optional: true
+            dhcp4: false
+            dhcp6: false
+            mtu: 9000
+            match:
+                macaddress: 84:16:0c:32:05:7c
+            set-name: eth3
+            accept-ra: false
+            link-local: []
+
+
+
+        eno4:
+            optional: true
+            dhcp4: false
+            dhcp6: false
+            addresses:
+            - [SSH_IP]
+            mtu: 9000
+            match:
+                macaddress: 84:16:0c:32:05:7d
+            set-name: eth4
+            accept-ra: false
+            link-local: []
+
+
+
+        ibp129s0:
+            dhcp4: false
+            dhcp6: false
+            addresses:
+            - [NFS_IP]
+            match:
+                macaddress: 80:00:02:08:fe:80:00:00:00:00:00:00:7c:fe:90:03:00:a5:c9:f1
+            set-name: ib1
+            accept-ra: false
+            link-local: []
+
+
+
+        ibp129s0d1:
+            optional: true
+            dhcp4: false
+            dhcp6: false
+            match:
+                macaddress: 80:00:02:09:fe:80:00:00:00:00:00:00:7c:fe:90:03:00:a5:c9:f2
+            set-name: ib2
+            accept-ra: false
+            link-local: []
