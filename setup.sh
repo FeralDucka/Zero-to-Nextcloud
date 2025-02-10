@@ -123,10 +123,10 @@ apt install -y binutils python3-venv
 # Installing CRON
 apt install -y cron
 
-# Install SSH server
+# Installing SSH server
 apt install -y openssh-server
 
-# Install Chrony to create an NTP server
+# Installing Chrony to create an NTP server
 apt install -y chrony
 
 # Installing Firewall software
