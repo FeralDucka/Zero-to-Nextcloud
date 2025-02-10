@@ -117,7 +117,7 @@ apt install -y bzip2 curl htop ffmpeg iputils-ping nano python3 wget
 # Installing InfiniBand software
 apt install -y infiniband-diags opensm
 
-# Install tool needed to compile telegram-send-py
+# Installing tool needed to compile telegram-send-py
 apt install -y binutils python3-venv
 
 # Installing CRON
@@ -159,7 +159,7 @@ PHP_VERSION=$(php -v | grep '[1-9]\.[1-9]' -o -m 1)
 # Installing Redis software
 apt install -y redis-server
 
-# Installin NUT software
+# Installing NUT software
 apt install -y nut
 
 
@@ -178,7 +178,7 @@ chpasswd <<<"$HOST_USER:$HOST_PASSWORD"
 
 # -----------------------------------------------------------------------------#
 
-# Removing default user from group
+# Removing default user from sudo group
 deluser $HOST_USER sudo
 
 # -----------------------------------------------------------------------------#
@@ -442,13 +442,15 @@ sed -i "s|\[TOKEN\]|$DUCKDNS_TOKEN|" /usr/local/sbin/check_ip.sh
 
 # -----------------------------------------------------------------------------#
 
-#  chmod only root can execute the files
+#  chmod only root can read and execute the files
 chmod 500 /usr/local/sbin/backup_nextcloud_db.sh
 chmod 500 /usr/local/sbin/backup_nextcloud_www.sh
 chmod 500 /usr/local/sbin/check_ib.sh
 chmod 500 /usr/local/sbin/check_ip.sh
 chmod 500 /usr/local/sbin/check_nfs.sh
 chmod 500 /usr/local/sbin/check_service.sh
+
+#  chmod everyone can only read and execute the files
 chmod 555 /usr/local/sbin/ups_notify.sh
 chmod 555 /etc/profile.d/login-notify.sh
 
