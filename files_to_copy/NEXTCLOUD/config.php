@@ -70,4 +70,5 @@ $CONFIG = array (
   'preview_max_x' => 1024,
   'preview_max_y' => 1024,
   'profile.enabled' => false,
+  'updatedirectory' => '/var/nextcloud_update',
 );
