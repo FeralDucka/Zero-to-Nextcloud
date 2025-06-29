@@ -1397,6 +1397,12 @@ chown -R www-data:www-data /var/www/nextcloud
 
 # -----------------------------------------------------------------------------#
 
+# Create Update Directory for the updater of NextCloud
+mkdir /var/www/nextcloud_update
+chown -R www-data:www-data /var/www/nextcloud_update
+
+# -----------------------------------------------------------------------------#
+
 # Unused sample file
 rm /var/www/nextcloud/config/config.sample.php
 
