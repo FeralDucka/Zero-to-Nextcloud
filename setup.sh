@@ -476,6 +476,7 @@ crontab -u root -l | { cat; echo "*/1 * * * *  /usr/local/sbin/check_service.sh 
 crontab -u root -l | { cat; echo "*/1 * * * *  /usr/local/sbin/check_service.sh mysql"; } | crontab -u root -
 crontab -u root -l | { cat; echo "*/1 * * * *  /usr/local/sbin/check_service.sh php$PHP_VERSION-fpm"; } | crontab -u root -
 crontab -u root -l | { cat; echo "*/1 * * * *  /usr/local/sbin/check_service.sh redis"; } | crontab -u root -
+crontab -u root -l | { cat; echo "*/1 * * * *  /usr/local/sbin/check_service.sh fail2ban"; } | crontab -u root -
 
 # -----------------------------------------------------------------------------#
 
@@ -486,6 +487,7 @@ crontab -u root -l | { cat; echo "@reboot   /usr/local/sbin/check_service.sh apa
 crontab -u root -l | { cat; echo "@reboot   /usr/local/sbin/check_service.sh mysql"; } | crontab -u root -
 crontab -u root -l | { cat; echo "@reboot   /usr/local/sbin/check_service.sh php$PHP_VERSION-fpm"; } | crontab -u root -
 crontab -u root -l | { cat; echo "@reboot   /usr/local/sbin/check_service.sh redis"; } | crontab -u root -
+crontab -u root -l | { cat; echo "@reboot   /usr/local/sbin/check_service.sh fail2ban"; } | crontab -u root -
 
 
 
