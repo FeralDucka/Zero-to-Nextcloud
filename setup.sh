@@ -1271,12 +1271,12 @@ systemctl stop redis
 
 # Create folder for the logs of Redis server
 mkdir /mnt/WEBSERVER_LOGS/redis
-chown redis /mnt/WEBSERVER_LOGS/redis
+chown redis:redis /mnt/WEBSERVER_LOGS/redis
 chmod 755 /mnt/WEBSERVER_LOGS/redis
 
 # Create file for the logs of Redis server
 touch /mnt/WEBSERVER_LOGS/redis/error.log
-chown redis /mnt/WEBSERVER_LOGS/redis/error.log
+chown redis:redis /mnt/WEBSERVER_LOGS/redis/error.log
 chmod 644 /mnt/WEBSERVER_LOGS/redis/error.log
 
 # -----------------------------------------------------------------------------#
@@ -1290,6 +1290,8 @@ usermod -a -G redis www-data
 rm /etc/redis/redis.conf
 wget $REPO/REDIS/redis.conf -O /etc/redis/redis.conf
 sed -i "s|\[PASSWORD\]|$REDIS_PASSWORD|" /etc/redis/redis.conf
+chown redis:redis /etc/redis/redis.conf
+chmod 444 /etc/redis/redis.conf
 chattr +i /etc/redis/redis.conf
 
 # -----------------------------------------------------------------------------#
