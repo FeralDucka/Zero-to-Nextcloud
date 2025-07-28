@@ -993,7 +993,7 @@ mkdir /etc/modsecurity/rules
 
 # -----------------------------------------------------------------------------#
 
-# Download latest version of OWAS Core Rule Set (CRS)
+# Download latest version of OWASP Core Rule Set (CRS)
 VER=$(curl --silent -qI https://github.com/coreruleset/coreruleset/releases/latest | awk -F '/' '/^location/ {print  substr($NF, 1, length($NF)-1)}')
 wget https://github.com/coreruleset/coreruleset/releases/download/$VER/coreruleset-${VER#v}-minimal.tar.gz -P /etc/modsecurity/
 tar xvf /etc/modsecurity/coreruleset-${VER#v}-minimal.tar.gz -C /etc/modsecurity/
