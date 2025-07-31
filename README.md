@@ -35,7 +35,7 @@ wget https://raw.githubusercontent.com/FeralDucka/zero-to-nextcloud/main/setup.s
 chmod +x setup.sh
 ```
 ```
-sudo setup.sh
+sudo ./setup.sh
 ```
 
 <br>
@@ -56,7 +56,7 @@ wget https://raw.githubusercontent.com/FeralDucka/zero-to-nextcloud/main/reset.s
 chmod +x reset.sh
 ```
 ```
-sudo reset.sh
+sudo ./reset.sh
 ```
 
 <br>
