@@ -4,16 +4,6 @@
 
 
 
-# Check if the script is being run as root
-if [[ $EUID -ne 0 ]]; then
-    echo "This script must be run as root!" 1>&2
-    exit 1
-fi
-
-
-
-
-
 #=============================================================================#
 #                                                                             #
 #                           CONFIGURATION  VARIABLES                          #
@@ -96,6 +86,22 @@ NEXTCLOUD_MIN_SPEED=$((5 * 1024 * 1024))
 NEXTCLOUD_VERSION="latest"
 
 NEXTCLOUD_URL="example.org"
+
+
+
+
+
+#=============================================================================#
+#                                                                             #
+#                                SCRIPT  BEGINS                               #
+#                                                                             #
+#=============================================================================#
+
+# Check if the script is being run as root
+if [[ $EUID -ne 0 ]]; then
+    echo "This script must be run as root!" 1>&2
+    exit 1
+fi
 
 
 
@@ -911,6 +917,13 @@ mkdir /etc/ssl/private/apache
 chown www-data:www-data /etc/ssl/certs/apache
 chown www-data:www-data /etc/ssl/private/apache
 
+chmod 750 /etc/ssl/certs/apache
+chmod 750 /etc/ssl/private/apache
+
+# -----------------------------------------------------------------------------#
+
+# -- SSL files generation --
+
 # The files that will be generated
 APACHE_CA_KEY="/etc/ssl/private/apache/apache-selfsigned.key"
 APACHE_CA_CRT="/etc/ssl/certs/apache/apache-selfsigned.crt"
@@ -1066,7 +1079,7 @@ python3 -m venv /opt/certbot/
 ln -s /opt/certbot/bin/certbot /usr/bin/certbot
 
 # Install certificates
-certbot -m $CERTBOT_MAIL  --non-interactive --agree-tos --apache --domain $NEXTCLOUD_URL
+certbot -m $CERTBOT_MAIL --non-interactive --agree-tos --apache --domain $NEXTCLOUD_URL
 
 # -----------------------------------------------------------------------------#
 
@@ -1094,6 +1107,11 @@ chown mysql:mysql /mnt/WEBSERVER_LOGS/mysql
 
 # -----------------------------------------------------------------------------#
 
+# Enable mysql user to access /etc/ssl folder
+sudo usermod -aG ssl-cert mysql
+
+# -----------------------------------------------------------------------------#
+
 # Define the names for the certificate files
 MYSQL_CA_KEY="/etc/ssl/private/mysql/ssl-ca.key"
 MYSQL_CA_CRT="/etc/ssl/certs/mysql/ssl-ca.crt"
@@ -1106,6 +1124,9 @@ mkdir /etc/ssl/private/mysql
 
 chown mysql:mysql /etc/ssl/certs/mysql
 chown mysql:mysql /etc/ssl/private/mysql
+
+chmod 750 /etc/ssl/certs/mysql
+chmod 750 /etc/ssl/private/mysql
 
 # -----------------------------------------------------------------------------#
 
