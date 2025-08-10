@@ -873,6 +873,21 @@ chattr +i /etc/apache2/apache2.conf
 
 # -----------------------------------------------------------------------------#
 
+# Harden Apache2 folders
+chmod 700 /etc/apache2/conf-available
+chmod 700 /etc/apache2/conf-enabled
+chmod 700 /etc/apache2/sites-available
+chmod 700 /etc/apache2/sites-enabled
+chmod 700 /etc/apache2/mods-available
+chmod 700 /etc/apache2/mods-enabled
+
+# Harden Apache2 files
+chmod 400 /etc/apache2/envvars
+chmod 400 /etc/apache2/magic
+chmod 400 /etc/apache2/ports.conf
+
+# -----------------------------------------------------------------------------#
+
 # Diable server-status page (Vulnerability)
 a2dismod status
 
