@@ -180,7 +180,7 @@ set tabstospaces
 # set trimblanks
 
 ## Save files by default in Unix format (also when they were DOS or Mac).
-# set unix
+set unix
 
 ## The two single-column characters used to display the first characters
 ## of tabs and spaces.  187 in ISO 8859-1 (0000BB in Unicode) and 183 in
