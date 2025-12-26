@@ -89,6 +89,7 @@ sudo -u www-data php /var/www/nextcloud/occ app:enable twofactor_totp
 # Recommended Apps to install &#128301; &#127776;
 ```
 sudo -u www-data php /var/www/nextcloud/occ app:install camerarawpreviews --force
+sudo -u www-data php /var/www/nextcloud/occ app:install checksum --force
 sudo -u www-data php /var/www/nextcloud/occ app:install epubviewer --force
 sudo -u www-data php /var/www/nextcloud/occ app:install files_3dmodelviewer --force
 sudo -u www-data php /var/www/nextcloud/occ app:install files_archive --force
