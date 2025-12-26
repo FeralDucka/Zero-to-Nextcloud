@@ -91,6 +91,7 @@ sudo -u www-data php /var/www/nextcloud/occ app:enable twofactor_totp
 sudo -u www-data php /var/www/nextcloud/occ app:install camerarawpreviews --force
 sudo -u www-data php /var/www/nextcloud/occ app:install epubviewer --force
 sudo -u www-data php /var/www/nextcloud/occ app:install files_3dmodelviewer --force
+sudo -u www-data php /var/www/nextcloud/occ app:install files_archive --force
 sudo -u www-data php /var/www/nextcloud/occ app:install files_automatedtagging --force
 sudo -u www-data php /var/www/nextcloud/occ app:install files_downloadactivity --force
 sudo -u www-data php /var/www/nextcloud/occ app:install files_markdown --force
