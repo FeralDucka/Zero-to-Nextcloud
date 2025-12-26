@@ -105,5 +105,6 @@ sudo -u www-data php /var/www/nextcloud/occ app:install previewgenerator --force
 sudo -u www-data php /var/www/nextcloud/occ app:install quota_warning --force
 sudo -u www-data php /var/www/nextcloud/occ app:install richdocuments --force
 sudo -u www-data php /var/www/nextcloud/occ app:install richdocumentscode --force
+sudo -u www-data php /var/www/nextcloud/occ app:install twofactor_webauthn --force
 sudo -u www-data php /var/www/nextcloud/occ app:install user_usage_report --force
 ```
