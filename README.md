@@ -90,15 +90,18 @@ sudo -u www-data php /var/www/nextcloud/occ app:enable twofactor_totp
 ```
 sudo -u www-data php /var/www/nextcloud/occ app:install camerarawpreviews --force
 sudo -u www-data php /var/www/nextcloud/occ app:install checksum --force
+sudo -u www-data php /var/www/nextcloud/occ app:install duplicatefinder --force
 sudo -u www-data php /var/www/nextcloud/occ app:install epubviewer --force
 sudo -u www-data php /var/www/nextcloud/occ app:install files_3dmodelviewer --force
 sudo -u www-data php /var/www/nextcloud/occ app:install files_archive --force
 sudo -u www-data php /var/www/nextcloud/occ app:install files_automatedtagging --force
 sudo -u www-data php /var/www/nextcloud/occ app:install files_downloadactivity --force
 sudo -u www-data php /var/www/nextcloud/occ app:install files_markdown --force
+sudo -u www-data php /var/www/nextcloud/occ app:install geoblocker --force
 sudo -u www-data php /var/www/nextcloud/occ app:install htmlviewer --force
 sudo -u www-data php /var/www/nextcloud/occ app:install integration_giphy --force
 sudo -u www-data php /var/www/nextcloud/occ app:install integration_openstreetmap --force
+sudo -u www-data php /var/www/nextcloud/occ app:install logcleaner --force
 sudo -u www-data php /var/www/nextcloud/occ app:install memories --force
 sudo -u www-data php /var/www/nextcloud/occ app:install metadata --force
 sudo -u www-data php /var/www/nextcloud/occ app:install music --force
@@ -107,6 +110,7 @@ sudo -u www-data php /var/www/nextcloud/occ app:install previewgenerator --force
 sudo -u www-data php /var/www/nextcloud/occ app:install quota_warning --force
 sudo -u www-data php /var/www/nextcloud/occ app:install richdocuments --force
 sudo -u www-data php /var/www/nextcloud/occ app:install richdocumentscode --force
+sudo -u www-data php /var/www/nextcloud/occ app:install thesearchpage --force
 sudo -u www-data php /var/www/nextcloud/occ app:install twofactor_webauthn --force
 sudo -u www-data php /var/www/nextcloud/occ app:install user_usage_report --force
 ```
