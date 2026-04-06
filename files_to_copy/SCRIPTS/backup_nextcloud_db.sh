@@ -7,7 +7,7 @@ DATE=$(date +"%Y-%m-%d__%H-%M-%S")
 FILE_NAME="${DB_NAME}__sql__${DATE}"
 
 # Perform the export with mysqldump (you may need to add user credentials)
-mysqldump "$DB_NAME" > "/mnt/NEXTCLOUD_BACKUP/$FILE_NAME.sql"
+mysqldump --verbose "$DB_NAME" > "/mnt/NEXTCLOUD_BACKUP/$FILE_NAME.sql"
 
 # Compress the file to save space
 tar -czf "/mnt/NEXTCLOUD_BACKUP/$FILE_NAME.tar.gz" "/mnt/NEXTCLOUD_BACKUP/$FILE_NAME.sql"
